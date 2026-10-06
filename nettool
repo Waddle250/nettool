@@ -1,5 +1,6 @@
 #!bin/python
 import socket
+import sys
 
 def checkIP():
   hostname = socket.gethostname()
@@ -9,3 +10,6 @@ def checkIP():
 
 def checkDevices():
   pass
+
+if sys.argv[1] == ip:
+  checkIP()

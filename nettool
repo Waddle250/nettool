@@ -3,15 +3,15 @@ import socket
 import sys
 
 def checkIP():
-  hostname = socket.gethostname()
   ip = socket.gethostbyname(hostname)
-  print(f"hostname: {hostname}")
   print(f"ip: {ip}")
 
-def checkDevices():
-  pass
+def checkHostname():
+  hostname = socket.gethostname()
+  print(f"hostname: {hostname}")
+
 
 if sys.argv[1] == "ip":
   checkIP()
-if sys.argv[1] == "devices":
-  checkDevices()
+if sys.argv[1] == "info":
+  checkInfo()

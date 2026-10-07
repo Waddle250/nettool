@@ -22,6 +22,9 @@ def connect():
 
 if sys.argv[1] == "ip":
   checkIP()
+
+elif sys.argv[1] == "devices":
+  checkDevices()
 elif sys.argv[1] == "hostname":
   checkHostname()
 elif sys.argv[1] == "create-server":

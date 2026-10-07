@@ -11,5 +11,7 @@ def checkIP():
 def checkDevices():
   pass
 
-if sys.argv[1] == ip:
+if sys.argv[1] == "ip":
   checkIP()
+if sys.argv[1] == "devices":
+  checkDevices()

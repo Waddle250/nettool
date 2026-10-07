@@ -14,8 +14,11 @@ def checkHostname():
 def createServer():
   socket.create_server(sys.argv[2])
 
-def sethostname():
+def setHostname():
   socket.sethostname(sys.argv[2])
+
+def connect():
+  socket.connect(sys.argv[2])
 
 if sys.argv[1] == "ip":
   checkIP()
@@ -23,10 +26,15 @@ elif sys.argv[1] == "hostname":
   checkHostname()
 elif sys.argv[1] == "create-server":
   createServer()
+elif sys.argv[1] == "set-hostname":
+  setHostname()
+elif sys.argv[1] == "connect":
+  connect()
 else:
   print("""Valid Commands:
   nettool ip
   nettool hostname
   netttool set-hostname
   nettool create-server <address>
+  nettool connect <address>
   """)

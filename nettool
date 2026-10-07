@@ -3,6 +3,7 @@ import socket
 import sys
 
 def checkIP():
+  hostname = socket.gethostname()
   ip = socket.gethostbyname(hostname)
   print(f"ip: {ip}")
 
@@ -10,8 +11,22 @@ def checkHostname():
   hostname = socket.gethostname()
   print(f"hostname: {hostname}")
 
+def createServer():
+  socket.create_server(sys.argv[2])
+
+def sethostname():
+  socket.sethostname(sys.argv[2])
 
 if sys.argv[1] == "ip":
   checkIP()
-if sys.argv[1] == "info":
-  checkInfo()
+elif sys.argv[1] == "hostname":
+  checkHostname()
+elif sys.argv[1] == "create-server":
+  createServer()
+else:
+  print("""Valid Commands:
+  nettool ip
+  nettool hostname
+  netttool set-hostname
+  nettool create-server <address>
+  """)
